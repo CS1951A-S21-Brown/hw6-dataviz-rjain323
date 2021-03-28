@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>Assignment 6 &laquo; Data Visualization Dashboard&raquo;</title>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main.css"/>
+        <!--Feel free to add more CSS files as needed-->
+        <!-- <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/d3-array.v2.min.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script> -->
+        <!-- <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script> -->
+        <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+        <script src="https://d3js.org/d3-array.v2.min.js"></script>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+       
+    
+
+    </head>
+<body>
+    <style>
+        
+        .vertical-center {
+          margin: 0;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+        </style>
+    <div class="header">
+        <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
+            <!-- <div class="vertical-center"> -->
+                <button type="button" class="btn btn-info" onclick="setData(0, 'country')">Win_Percent</button>
+                <button type="button" class="btn btn-info" onclick="setData(1, 'country')">Wins</button>
+                <button type="button" class="btn btn-info" onclick="changeURL('http://localhost:8888/dashboard/')">Dashboard</button>
+                <button type="button" class="btn btn-info" onclick="changeURL('http://localhost:8888/graph1%20/')">Graph1</button>
+
+                <button type="button" class="btn btn-info" onclick="changeURL('http://localhost:8888/graph2/')">Graph2</button>
+                <button type="button" class="btn btn-info" onclick="changeURL('http://localhost:8888/graph3/')">Graph3</button>
+            <!-- </div> -->
+    </div>
+    <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div id="graph1"></div>
+            <div id="graph2"></div><br/>
+        </div>
+        <div class="col-lg-6">
+            <div id="graph3"></div>
+        </div>
+    </div>
+    <!--Feel free to add more JavaScript files as needed-->
+    <script type="text/javascript" src="graph3.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+
+</body>
+</html>

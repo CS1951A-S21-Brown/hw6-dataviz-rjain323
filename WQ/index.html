@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>Assignment 6 &laquo; Data Visualization Dashboard&raquo;</title>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main.css"/>
+        <!--Feel free to add more CSS files as needed-->
+        <!-- <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/d3-array.v2.min.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script> -->
+        <!-- <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script> -->
+        <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+        <script src="https://d3js.org/d3-array.v2.min.js"></script>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <style type="text/css">
+            /* Custom style rules go here. We've included a few, but feel free to write your own! */
+            button:focus {
+                outline: 0 !important;
+            }
+            svg {
+                display: block;
+                margin: 0 auto;
+                font: 10px sans-serif;
+            }
+            .tooltip {
+                position: absolute;
+                font-size: 12px;
+                min-width: 100px;
+                padding: 10px;
+                width:  auto;
+                height: auto;
+            }
+        </style>
+    
+
+    </head>
+<body>
+    <style>
+        
+        .vertical-center {
+          margin: 0;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+        </style>
+    <div class="header">
+        <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
+        <button type="button" class="btn btn-info" onclick="changeURL('http://localhost:8888/dashboard/')">Dashboard</button> 
+
+        <h4>
+            Question 1
+        </h4>
+        <p>
+            The dashboard answers the first question of number of games per year between 1900-1910 in a connected scatter plot form. On the Y axis is the number of games and on the x axis is years. The reason I chose a connected scatter plot is because I thought it showed well how the number of games played per year in that decade changed over time. Moreover, the scatter plot is an efficient graph for showing something like number of games. A bar graph could have been useful but takes a lot of space for something that can be shown with less. Moreover, a bar graph is not as good of a way of showing change in games over time because the viewer would need to compare the heights of the top of the bars, but with a scatter plot the viewer can just look at the direction of the line connecting the dots. I use a bar graph to answer the question of teams with the highest winning percentages in our dataset using a bar graph. The heights of the bar graphs indicate how the countries on the x axis compare to each other. A bar graph answer this question nicely because one only needs to compare the heights of the bar graphs to see how one country relates to another country. A scatter plot would not be as helpful here because we are not looking at the change of variable over time. Moreover, in the first graph we were looking at a change in time so the x axis labels are related to each other (increasing in time as you go to the left); with this graph the countries are not related to each other than they all have the highest winning percentage, so the bar graph is helpful for guiding the viewers eyes down from the top of the bar and the corresponding y axis value to the x axis value. Moreover, when you scroll over the graph you can see number of wins which provides another useful metric for measure winning in international soccer.  I used a bar graph to address this questions because I was once again comparing winning percentages (and number of wins this time) of countries, so for all the reasons listed above (guiding eyes to the x axis label and comparing heights), this graph answers the question of top performing teams well. I use number of wins and winning percentage because I thought those capture how well a team does but also makes it so a team with a higher winning percentage because they won all their knockout games but lost in the first elimination round is not included in the top performing countries number of wins graph. So having the actual total number of wins shows some consistency over the last two world cups because only. the best teams have a high number of wins across two world cups  
+        </p>
+        <h4>
+            Question 2
+        </h4>
+        <p>
+            D3 was helpful and improved visualization because it allowed me to have buttons that changed what one graph showed. I think being able to quickly switch between two different sets of numbers with the click of a button is really helpful for when I am trying to show the same thing (top performing nations in the last two world cups) in two different ways. D3 also has a lot of build in packages for making graphs and ordering them in a certain way. So make something like a bar graph and scatter plot is easy because you can use things like “rect” and “circle” to start making the bar and scatter plot; but you also afforded a tremendous amount of flexibility in how you want the bars and the scatter plot dots to actually look. Finally, the tooltips like being able to easily code what will appear on the screen when you hover over a data point or barplot bar. This allows you to add many features to a single graph and make it more interactive. 
+        </p>
+        <h4>
+            Question 3
+        </h4>
+        <p>
+            One reason D3 might not be the best tool is its flexibility. While I mentioned a positive of the flexibility, the flexibility also requires good javascript and D3 fluency that takes a lot of time to develop. Therefore, if someone is new to javascript or even D3, the learning curve is pretty steep, and it can be difficult to get the basics of the plot up in the way that you want. D3 also seems like a hard tool to use to conduct a lot of math on; so if you need to clean the data very intensely and conduct a lot of math calculations, then D3 might not be very helpful. The third reason is that D3 allows one to change very small details which means that data scientists may be tempted to mess with their graphs to make them look nicer, but in doing so may accidently hurt another aspect of their data visualizations accessibility. Having certain packages, the require the user to have certain settings is helpful for users in that they know that using that package will give them at minimum a graph that is accessible to everyone. For example, if one is using D3 they might not use a color that is easy for people that are colorblind to see, but if package requires this, then the user doesn’t need to worry about their graph not being inclusive. 
+        </p>
+        <h4>
+            Question 4
+        </h4>
+        <p>
+            Users that do not have poor visibility will find this graph accessible.  Since the graph doesn’t compare bars of different colors, colorblind users should not have difficulty in getting the information that I want to convey. However, since there are no one sentence graph descriptions under my graph, a user using a text reader would have difficulty using the graphs. One thing that I could add is one sentence text descriptions of what the graphs is talking about. I also don’t provide all the data to the user. I could add text boxes that appear when someone overs over a bar or data point that shows exactly what the win percentage, number of wins, number of games, and number of ties for each data point. Sonification could also be another tool that I use to help make my graphs more accessible to people with visibility issues. 
+        </p>
+        <h4>
+            Question 5
+        </h4>
+        <p>
+            When I was making each graph I could have added a text box that gave a one sentence description that summed up what the takeaway from the graph. I could also have added more in the tooltip mouse hover to include the number of loses and win percentages, instead of just the number of wins. I think what prevented me from doing this was just knowledge of how to include different text boxes exactly where I want them to go. It was also hard to keep all the relevant data in the list of dictionaries that I eventually used to make the bar graphs and scatter plots. 
+        </p>
+            <!-- <div class="vertical-center"> -->
+                <!-- <script id="blockOfStuff" type="text/html">
+                    Here's some random text.
+                    <h1>Including HTML markup</h1>
+                    And quotes too, or as one man said, "These are quotes, but
+                    'these' are quotes too."
+                </script> -->
+                <!-- <button type="button" class="btn btn-info" onclick="setData(0, 'country')">Win_Percent</button>
+                <button type="button" class="btn btn-info" onclick="setData(1, 'country')">Wins</button> -->
+        console.log(hi)
+                <!-- <button type="button" class="btn btn-info" onclick="changeURL('http://localhost:8888/graph2/')">Graph2</button>
+                <button type="button" class="btn btn-info" onclick="changeURL('http://localhost:8888/graph3/')">Graph3</button>  -->
+
+
+            <!-- </div> -->
+    </div>
+    <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div id="graph1"></div>
+            <div id="graph2"></div><br/>
+        </div>
+        <div class="col-lg-6">
+            <div id="graph3"></div>
+        </div>
+    </div>
+    <!--Feel free to add more JavaScript files as needed-->
+    <!-- <script type="text/javascript" src="dashboard.js"></script>
+    <script type="text/javascript" src="graph3.js"></script> --> -->
+    <script type="text/javascript" src="WQ.js"></script> -->
+
+
+    <!-- <script type="text/javascript" src="graph2.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+
+</body>
+</html>
