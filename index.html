@@ -6,11 +6,62 @@
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="main.css"/>
         <!--Feel free to add more CSS files as needed-->
+        <!-- <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/d3-array.v2.min.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script> -->
+        <!-- <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script> -->
+        <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+        <script src="https://d3js.org/d3-array.v2.min.js"></script>
         <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <style type="text/css">
+            /* Custom style rules go here. We've included a few, but feel free to write your own! */
+            button:focus {
+                outline: 0 !important;
+            }
+            svg {
+                display: block;
+                margin: 0 auto;
+                font: 10px sans-serif;
+            }
+            .tooltip {
+                position: absolute;
+                font-size: 12px;
+                min-width: 100px;
+                padding: 10px;
+                width:  auto;
+                height: auto;
+            }
+        </style>
+    
+
     </head>
 <body>
+    <style>
+        
+        .vertical-center {
+          margin: 0;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+        </style>
     <div class="header">
         <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
+            <!-- <div class="vertical-center"> -->
+                
+                <!-- <button type="button" class="btn btn-info" onclick="setData(0, 'country')">Win_Percent</button>
+                <button type="button" class="btn btn-info" onclick="setData(1, 'country')">Wins</button> -->
+                <button type="button" class="btn btn-info" onclick="changeURL('http://localhost:8888/graph1%20/')">Graph1</button>
+                <button type="button" class="btn btn-info" onclick="changeURL('http://localhost:8888/graph2/')">Graph2</button>
+                <button type="button" class="btn btn-info" onclick="changeURL('http://localhost:8888/graph3/')">Graph3</button>
+                <button type="button" class="btn btn-info" onclick="changeURL('http://localhost:8888/WQ/')">Written Questions</button>
+        <h4>
+            This is the dashboard. Above are the buttons that will take you to the graphs. In each graph page there are buttons to bring you back to the dash board.
+        </h4>
+
+            <!-- </div> -->
     </div>
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     <div class="row">
@@ -23,6 +74,15 @@
         </div>
     </div>
     <!--Feel free to add more JavaScript files as needed-->
+    <script type="text/javascript" src="dashboard.js"></script>
+    <!-- <script type="text/javascript" src="graph3.js"></script> --> -->
+
+
+    <!-- <script type="text/javascript" src="graph2.js"></script>
     <script type="text/javascript" src="main.js"></script>
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+
 </body>
 </html>
