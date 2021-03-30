@@ -37,7 +37,7 @@ let svg = d3.select('#graph1')
 //     });
 var parseDate = d3.timeParse("%Y-%m-%d");
 
-d3.csv("../data/football.csv").then(function(data) {
+d3.csv("/data/football.csv").then(function(data) {
 
     console.log(data)
   // When reading the csv, I must format variables:

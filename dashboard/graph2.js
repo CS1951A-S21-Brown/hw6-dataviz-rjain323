@@ -26,7 +26,7 @@ let svg = d3.select('#graph2')
     "translate(" + margin.left + "," + margin.top + ")");
 
 
-    d3.csv("../data/football.csv").then(function(data) {
+    d3.csv("/data/football.csv").then(function(data) {
 
         // console.log(data)
       // When reading the csv, I must format variables:
